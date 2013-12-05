@@ -1,0 +1,3261 @@
+/**
+  This is where responsive break points are defined. Using Sass mixins They must be included first 
+
+
+  EXAMPLE USAGE:
+
+  #elemID {
+    width: 1200px;
+    @include respond-to(mobile) {
+      width: 100%;  
+    }
+  }
+
+  //container widths within break points: 1200px, (960px => default), 748px, 100%;
+*/
+/* normalize.css v1.1.0 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+/* line 22, ../../app/styles/pagestyles/normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+/* line 32, ../../app/styles/pagestyles/normalize.scss */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 43, ../../app/styles/pagestyles/normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address styling not present in IE 7/8/9, Firefox 3, and Safari 4.
+ * Known issue: no IE 6 support.
+ */
+/* line 53, ../../app/styles/pagestyles/normalize.scss */
+[hidden] {
+  display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 68, ../../app/styles/pagestyles/normalize.scss */
+html {
+  font-size: 100%;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Address `font-family` inconsistency between `textarea` and other form
+ * elements.
+ */
+/* line 83, ../../app/styles/pagestyles/normalize.scss */
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+
+/**
+ * Address margins handled incorrectly in IE 6/7.
+ */
+/* line 91, ../../app/styles/pagestyles/normalize.scss */
+body {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+/* line 103, ../../app/styles/pagestyles/normalize.scss */
+a:focus {
+  outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+/* line 112, ../../app/styles/pagestyles/normalize.scss */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address font sizes and margins set differently in IE 6/7.
+ * Address font sizes within `section` and `article` in Firefox 4+, Safari 5,
+ * and Chrome.
+ */
+/* line 126, ../../app/styles/pagestyles/normalize.scss */
+h1 {
+  font-size: 3.6rem;
+  margin: 0.67em 0;
+  letter-spacing: 1.3px;
+  font-family: 'archivo_blackregular', Arial, serif; font-weight: 800;
+  text-align: center;
+  color:#fff; 
+  text-shadow: 2px 1px 2px rgba(150, 150, 150, 0.45);
+}
+
+/* line 131, ../../app/styles/pagestyles/normalize.scss */
+h2{
+   font-size: 19px;
+   font-family: 'Montserrat', sans-serif;
+   text-transform: uppercase;
+   text-align: center;
+   color:white;
+   line-height: 60px;
+  text-shadow: 2px 1px 2px rgba(150, 150, 150, 0.45);
+
+   -webkit-transition: 1s;
+   -moz-transition: 1s;
+   -ms-transition: 1s;
+   -o-transition: 1s;
+   transition: 1s;
+
+}
+
+/* line 136, ../../app/styles/pagestyles/normalize.scss */
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+  text-shadow: 2px 1px 2px rgba(150, 150, 150, 0.45);
+
+}
+
+/* line 141, ../../app/styles/pagestyles/normalize.scss */
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+
+/* line 146, ../../app/styles/pagestyles/normalize.scss */
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0;
+}
+
+/* line 151, ../../app/styles/pagestyles/normalize.scss */
+h6 {
+  font-size: 0.67em;
+  margin: 2.33em 0;
+}
+
+/**
+ * Address styling not present in IE 7/8/9, Safari 5, and Chrome.
+ */
+/* line 160, ../../app/styles/pagestyles/normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 3+, Safari 4/5, and Chrome.
+ */
+/* line 169, ../../app/styles/pagestyles/normalize.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* line 173, ../../app/styles/pagestyles/normalize.scss */
+blockquote {
+  margin: 1em 40px;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+/* line 181, ../../app/styles/pagestyles/normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ * Known issue: no IE 6/7 normalization.
+ */
+/* line 190, ../../app/styles/pagestyles/normalize.scss */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Address styling not present in IE 6/7/8/9.
+ */
+/* line 200, ../../app/styles/pagestyles/normalize.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address margins set differently in IE 6/7.
+ */
+/* line 210, ../../app/styles/pagestyles/normalize.scss */
+p,
+pre {
+  margin: 1em 0;
+}
+
+/**
+ * Correct font family set oddly in IE 6, Safari 4/5, and Chrome.
+ */
+/* line 221, ../../app/styles/pagestyles/normalize.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  _font-family: "courier new", monospace;
+  font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+/* line 231, ../../app/styles/pagestyles/normalize.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/**
+ * Address CSS quotes not supported in IE 6/7.
+ */
+/* line 241, ../../app/styles/pagestyles/normalize.scss */
+q {
+  quotes: none;
+}
+
+/**
+ * Address `quotes` property not supported in Safari 4.
+ */
+/* line 250, ../../app/styles/pagestyles/normalize.scss */
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 259, ../../app/styles/pagestyles/normalize.scss */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 268, ../../app/styles/pagestyles/normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 275, ../../app/styles/pagestyles/normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 279, ../../app/styles/pagestyles/normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Lists
+   ========================================================================== */
+/**
+ * Address margins set differently in IE 6/7.
+ */
+/* line 294, ../../app/styles/pagestyles/normalize.scss */
+dl,
+menu,
+ol,
+ul {
+  margin: 1em 0;
+}
+
+/* line 298, ../../app/styles/pagestyles/normalize.scss */
+dd {
+  margin: 0 0 0 40px;
+}
+
+/**
+ * Address paddings set differently in IE 6/7.
+ */
+/* line 308, ../../app/styles/pagestyles/normalize.scss */
+menu,
+ol,
+ul {
+  padding: 0 0 0 40px;
+}
+
+/**
+ * Correct list images handled incorrectly in IE 7.
+ */
+/* line 317, ../../app/styles/pagestyles/normalize.scss */
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * 1. Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 2. Improve image quality when scaled in IE 7.
+ */
+/* line 331, ../../app/styles/pagestyles/normalize.scss */
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+/* line 340, ../../app/styles/pagestyles/normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
+ */
+/* line 352, ../../app/styles/pagestyles/normalize.scss */
+figure {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Correct margin displayed oddly in IE 6/7.
+ */
+/* line 364, ../../app/styles/pagestyles/normalize.scss */
+form {
+  margin: 0;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 372, ../../app/styles/pagestyles/normalize.scss */
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct color not being inherited in IE 6/7/8/9.
+ * 2. Correct text not wrapping in Firefox 3.
+ * 3. Correct alignment displayed oddly in IE 6/7.
+ */
+/* line 384, ../../app/styles/pagestyles/normalize.scss */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  white-space: normal;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */
+}
+
+/**
+ * 1. Correct font size not being inherited in all browsers.
+ * 2. Address margins set differently in IE 6/7, Firefox 3+, Safari 5,
+ *    and Chrome.
+ * 3. Improve appearance and consistency in all browsers.
+ */
+/* line 401, ../../app/styles/pagestyles/normalize.scss */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */
+}
+
+/**
+ * Address Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 414, ../../app/styles/pagestyles/normalize.scss */
+button,
+input {
+  line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+/* line 426, ../../app/styles/pagestyles/normalize.scss */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+/* line 443, ../../app/styles/pagestyles/normalize.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+  *overflow: visible;
+  /* 4 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 454, ../../app/styles/pagestyles/normalize.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to content-box in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+/* line 466, ../../app/styles/pagestyles/normalize.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 479, ../../app/styles/pagestyles/normalize.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+/* line 492, ../../app/styles/pagestyles/normalize.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 3+.
+ */
+/* line 501, ../../app/styles/pagestyles/normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+/* line 511, ../../app/styles/pagestyles/normalize.scss */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 524, ../../app/styles/pagestyles/normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**
+  This is where responsive break points are defined. Using Sass mixins They must be included first 
+
+
+  EXAMPLE USAGE:
+
+  #elemID {
+    width: 1200px;
+    @include respond-to(mobile) {
+      width: 100%;  
+    }
+  }
+
+  //container widths within break points: 1200px, (960px => default), 748px, 100%;
+*/
+/* line 3, ../../app/styles/pagestyles/layout.scss */
+body {
+  margin: 0 auto;
+  width: 100%;
+  background-color: white;
+}
+
+/* line 8, ../../app/styles/pagestyles/layout.scss */
+.container {
+  clear: both;
+  background-size: cover;
+  background-position: center;
+}
+
+/* line 14, ../../app/styles/pagestyles/layout.scss */
+.container-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  /* Large desktop */
+  /* Portrait tablet to landscape and desktop */
+  /* Landscape phone to portrait tablet */
+  /* Landscape phones and down */
+}
+@media only screen and (min-width: 1300px) {
+  /* line 14, ../../app/styles/pagestyles/layout.scss */
+  .container-inner {
+    max-width: 1280px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  /* line 14, ../../app/styles/pagestyles/layout.scss */
+  .container-inner {
+    max-width: 748px;
+  }
+}
+@media only screen and (min-width: 661px) and (max-width: 767px) {
+  /* line 14, ../../app/styles/pagestyles/layout.scss */
+  .container-inner {
+    max-width: 640px;
+  }
+}
+@media only screen and (max-width: 660px) {
+  /* line 14, ../../app/styles/pagestyles/layout.scss */
+  .container-inner {
+    width: 100%;
+  }
+}
+
+
+/* line 14, ../../app/styles/pagestyles/layout.scss */
+.container-inner-splash {
+  width: 100%;
+  margin: 0 auto;
+  /* Large desktop */
+  /* Portrait tablet to landscape and desktop */
+  /* Landscape phone to portrait tablet */
+  /* Landscape phones and down */
+}
+@media only screen and (width: 100%) {
+  /* line 14, ../../app/styles/pagestyles/layout.scss */
+  .container-inner-splash {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) and (width: 979px) {
+  /* line 14, ../../app/styles/pagestyles/layout.scss */
+  .container-inner-splash {
+    width: 748px;
+  }
+}
+@media only screen and (min-width: 661px) and (max-width: 767px) {
+  /* line 14, ../../app/styles/pagestyles/layout.scss */
+  .container-inner-splash {
+    max-width: 640px;
+  }
+}
+@media only screen and (max-width: 660px) {
+  /* line 14, ../../app/styles/pagestyles/layout.scss */
+  .container-inner-splash {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+
+/* line 25, ../../app/styles/pagestyles/layout.scss */
+[class*="span"] {
+  float: left;
+  min-height: 1px;
+}
+
+/* line 30, ../../app/styles/pagestyles/layout.scss */
+.span12 {
+  width: 960px;
+}
+
+/* line 31, ../../app/styles/pagestyles/layout.scss */
+.span2 {
+  width: 33.3%;
+}
+
+/* Large desktop */
+@media only screen and (min-width: 1300px) {
+  /* line 34, ../../app/styles/pagestyles/layout.scss */
+  .span12 {
+    width: 1280px;
+  }
+
+  /* line 35, ../../app/styles/pagestyles/layout.scss */
+  .span2 {
+    width: 20%;
+  }
+}
+/* Portrait tablet to landscape and desktop */
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  /* line 39, ../../app/styles/pagestyles/layout.scss */
+  .span12 {
+    width: 748px;
+  }
+
+  /* line 40, ../../app/styles/pagestyles/layout.scss */
+  .span2 {
+    width: 33.3%;
+  }
+}
+/* Landscape phone to portrait tablet */
+@media only screen and (min-width: 661px) and (max-width: 767px) {
+  /* line 45, ../../app/styles/pagestyles/layout.scss */
+  .span12 {
+    width: 640px;
+  }
+
+  /* line 46, ../../app/styles/pagestyles/layout.scss */
+  .span2 {
+    width: 50%;
+  }
+}
+/* Landscape phones and down */
+@media only screen and (max-width: 660px) {
+  /* line 50, ../../app/styles/pagestyles/layout.scss */
+  .span12 {
+    width: 100%;
+  }
+
+  /* line 51, ../../app/styles/pagestyles/layout.scss */
+  .span2 {
+    width: 50%;
+  }
+}
+/* line 57, ../../app/styles/pagestyles/layout.scss */
+ul {
+  margin: 0;
+}
+
+/* line 61, ../../app/styles/pagestyles/layout.scss */
+.copy-box {
+  width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 20px;
+  /* Landscape phone to portrait tablet */
+  /* Landscape phones and down */
+}
+@media only screen and (min-width: 661px) and (max-width: 767px) {
+  /* line 61, ../../app/styles/pagestyles/layout.scss */
+  .copy-box {
+    width: 960px;
+    padding: 0 30px;
+  }
+}
+@media only screen and (max-width: 660px) {
+  /* line 61, ../../app/styles/pagestyles/layout.scss */
+  .copy-box {
+    width: 100%;
+    padding: 0 30px;
+    box-sizing: border-box;
+  }
+}
+
+/* line 77, ../../app/styles/pagestyles/layout.scss */
+p {
+  margin-bottom: 25px;
+}
+
+/* line 81, ../../app/styles/pagestyles/layout.scss */
+p a:link {
+  color: #AAAAAA;
+  text-decoration: none;
+}
+
+/* line 86, ../../app/styles/pagestyles/layout.scss */
+p a:visited {
+  color: #AAAAAA;
+}
+
+/* line 90, ../../app/styles/pagestyles/layout.scss */
+p a:hover {
+  text-decoration: none;
+  color: #c0392b;
+}
+
+
+
+.case-study{
+  width:100%;
+  height: 240px;
+}
+
+/*  SECTIONS  */
+.section {
+  clear: both;
+  padding: 0px;
+  margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+  margin: 0 0 .5% .5%;  
+  display: block;
+  float:left;
+}
+.col:first-child { margin-left: 0; }
+
+
+/*  GROUPING  */
+.group:before,
+.group:after {
+  content:"";
+  display:table;
+}
+.group:after {
+  clear:both;
+}
+
+/*  GRID OF THREE  */
+.span_3_of_3 {
+  width: 100%;
+}
+.span_2_of_3 {
+  width: 66.9%;
+}
+.span_1_of_3 {
+  width: 32.9%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+  .col { 
+    margin: 1% 0 1% 0%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .span_3_of_3 {
+    width: 100%; 
+  }
+  .span_2_of_3 {
+    width: 100%; 
+  }
+  .span_1_of_3 {
+    width: 100%;
+  }
+}
+
+
+
+/**
+  This is where responsive break points are defined. Using Sass mixins They must be included first 
+
+
+  EXAMPLE USAGE:
+
+  #elemID {
+    width: 1200px;
+    @include respond-to(mobile) {
+      width: 100%;  
+    }
+  }
+
+  //container widths within break points: 1200px, (960px => default), 748px, 100%;
+*/
+/* line 3, ../../app/styles/pagestyles/type.scss */
+.upper {
+  text-transform: uppercase;
+}
+
+.centered{ text-align: center;}
+
+/* line 7, ../../app/styles/pagestyles/type.scss */
+.subheading {
+  width:100%;
+  height: 50px;
+  background-color: #ecf0f1;
+  color: #222;
+  font-size: 25px;
+  margin: -10px 0 0 0;
+  text-align: center;
+  letter-spacing: 10px;
+  /* Large desktop */
+  /* Landscape phones and down */
+
+/*  -webkit-box-shadow:  1px 3px 3px 3px rgba(200, 200, 200, .3);
+        
+        box-shadow:  1px 3px 3px 3px rgba(200, 200, 200, .3);*/
+}
+
+@media only screen and (min-width: 1300px) {
+  /* line 7, ../../app/styles/pagestyles/type.scss */
+  .subheading {
+    margin: 0 0 0 0;
+  }
+}
+@media only screen and (max-width: 660px) {
+  /* line 7, ../../app/styles/pagestyles/type.scss */
+  .subheading {
+    font-size: 74px;
+  }
+}
+
+/* line 23, ../../app/styles/pagestyles/type.scss */
+.copy {
+  font-family: "georgia", serif;
+  font-size: 19px;
+  line-height: 32px;
+  font-weight: 400;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 23, ../../app/styles/pagestyles/type.scss */
+  .copy {
+    font-size: 36px;
+    line-height: 62px;
+  }
+}
+
+/**
+  This is where responsive break points are defined. Using Sass mixins They must be included first 
+
+
+  EXAMPLE USAGE:
+
+  #elemID {
+    width: 1200px;
+    @include respond-to(mobile) {
+      width: 100%;  
+    }
+  }
+
+  //container widths within break points: 1200px, (960px => default), 748px, 100%;
+*/
+/* line 2, ../../app/styles/pagestyles/header.scss */
+.header {
+  height: 80px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 2, ../../app/styles/pagestyles/header.scss */
+  .header {
+    height: 100px;
+  }
+}
+
+/* line 9, ../../app/styles/pagestyles/header.scss */
+.header-bar {
+  position: fixed;
+  z-index: 50000;
+  background-color: #f1f1f1;
+  width: 100%;
+/*  -moz-box-shadow: 0px -3px 32px 0px #999999;
+  -webkit-box-shadow: 0px -3px 32px 0px #999999;
+  box-shadow: 0px -3px 32px 0px #999999;*/
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 9, ../../app/styles/pagestyles/header.scss */
+  .header-bar {
+    display: none;
+  }
+}
+
+/* line 22, ../../app/styles/pagestyles/header.scss */
+.nav {
+  width: 95%;
+  margin: 0 auto;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 22, ../../app/styles/pagestyles/header.scss */
+  .nav {
+    display: none;
+  }
+}
+
+/* line 29, ../../app/styles/pagestyles/header.scss */
+.nav a {
+  color: #666;
+  text-decoration: none;
+}
+
+/* line 34, ../../app/styles/pagestyles/header.scss */
+.logo {
+  float: left;
+  margin-top: 25px;
+}
+
+/* line 39, ../../app/styles/pagestyles/header.scss */
+.name {
+  font-family: "UniversLTW01-57Condense 723821", sans-serif;
+  font-size: 11px;
+  float: left;
+  margin-left: 15px;
+  letter-spacing: 3px;
+  line-height: 80px;
+  /* Landscape phones and down */
+}
+/* line 39, ../../app/styles/pagestyles/header.scss */
+.name2 {
+  font-family: "UniversLTW01-57Condense 723821", sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+/* line 39, ../../app/styles/pagestyles/header.scss */
+.name3 {
+  font-family: "UniversLTW01-57Condense 723821", sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  line-height: 50px;
+  text-align: center;
+  color: #111;
+  /* Landscape phones and down */
+}
+
+.name4 {
+  font-family: "UniversLTW01-57Condense 723821", sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  line-height: 50px;
+  text-align: center;
+  color: white;
+  /* Landscape phones and down */
+}
+
+@media only screen and (max-width: 660px) {
+  /* line 39, ../../app/styles/pagestyles/header.scss */
+  .name {
+    font-size: 16px;
+    margin-top: 14px;
+    color: #666;
+    letter-spacing: 5px;
+  }
+}
+
+/* line 54, ../../app/styles/pagestyles/header.scss */
+nav {
+  float: right;
+  /* Landscape phone to portrait tablet */
+}
+@media only screen and (min-width: 661px) and (max-width: 767px) {
+  /* line 54, ../../app/styles/pagestyles/header.scss */
+  nav {
+    clear: right;
+  }
+}
+
+/* line 61, ../../app/styles/pagestyles/header.scss */
+nav ul {
+  padding: 0;
+}
+
+/* line 65, ../../app/styles/pagestyles/header.scss */
+nav li {
+  display: inline-block;
+  margin-left: 30px;
+  /* Landscape phone to portrait tablet */
+}
+@media only screen and (min-width: 661px) and (max-width: 767px) {
+  /* line 65, ../../app/styles/pagestyles/header.scss */
+  nav li {
+    margin-left: 19px;
+  }
+}
+
+/* line 73, ../../app/styles/pagestyles/header.scss */
+.awards-nav {
+  /* Landscape phone to portrait tablet */
+}
+@media only screen and (min-width: 661px) and (max-width: 767px) {
+  /* line 73, ../../app/styles/pagestyles/header.scss */
+  .awards-nav {
+    display: none;
+  }
+}
+
+/* line 79, ../../app/styles/pagestyles/header.scss */
+.awards-nav-twitter {
+  margin-left: 15px;
+}
+
+/* line 83, ../../app/styles/pagestyles/header.scss */
+nav a {
+  font-family: "UniversLTW01-57Condense 723821", sans-serif;
+  display: block;
+  height: 80px;
+  line-height: 80px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #666;
+}
+
+/* line 93, ../../app/styles/pagestyles/header.scss */
+nav a:visited {
+  color: #666666;
+}
+
+/* line 97, ../../app/styles/pagestyles/header.scss */
+nav a:hover {
+  color: #c0392b;
+}
+
+/* line 100, ../../app/styles/pagestyles/header.scss */
+.awards-icon-header {
+  vertical-align: middle;
+  margin-bottom: 3px;
+}
+/* line 103, ../../app/styles/pagestyles/header.scss */
+.awards-icon-header.awards-icon-fb {
+  display: inline-block;
+  background: url(../images/header-fb-sprite.png) 0 0;
+  height: 25px;
+  width: 25px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 103, ../../app/styles/pagestyles/header.scss */
+  .awards-icon-header.awards-icon-fb {
+    background-image: url(../images/_mobile/icon-fb.png);
+    height: 100px;
+    width: 100px;
+  }
+}
+/* line 113, ../../app/styles/pagestyles/header.scss */
+.awards-icon-header.awards-icon-fb:hover {
+  background: url(../images/header-fb-sprite.png) 0 25px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 113, ../../app/styles/pagestyles/header.scss */
+  .awards-icon-header.awards-icon-fb:hover {
+    display: none;
+  }
+}
+/* line 120, ../../app/styles/pagestyles/header.scss */
+.awards-icon-header.awards-icon-twitter {
+  display: inline-block;
+  background: url(../images/header-twitter-sprite.png) 0 0;
+  height: 25px;
+  width: 25px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 120, ../../app/styles/pagestyles/header.scss */
+  .awards-icon-header.awards-icon-twitter {
+    background-image: url(../images/_mobile/icon-twitter.png);
+    height: 100px;
+    width: 100px;
+  }
+}
+/* line 130, ../../app/styles/pagestyles/header.scss */
+.awards-icon-header.awards-icon-twitter:hover {
+  background: url(../images/header-twitter-sprite.png) 0 25px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 130, ../../app/styles/pagestyles/header.scss */
+  .awards-icon-header.awards-icon-twitter:hover {
+    display: none;
+  }
+}
+
+/* line 141, ../../app/styles/pagestyles/header.scss */
+.nav-mobile {
+  display: none;
+  font-family: "UniversLTW01-57Condense 723821", sans-serif;
+  font-size: 36px;
+  position: fixed;
+  z-index: 50000;
+  background-color: #fff;
+  width: 100%;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 141, ../../app/styles/pagestyles/header.scss */
+  .nav-mobile {
+    display: block;
+  }
+}
+/* line 154, ../../app/styles/pagestyles/header.scss */
+.nav-mobile .mobile-header {
+  height: 100px;
+  position: relative;
+  -moz-box-shadow: 0px -3px 32px 0px #999999;
+  -webkit-box-shadow: 0px -3px 32px 0px #999999;
+  box-shadow: 0px -3px 32px 0px #999999;
+}
+/* line 162, ../../app/styles/pagestyles/header.scss */
+.nav-mobile .nav-text-wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+/* line 167, ../../app/styles/pagestyles/header.scss */
+.nav-mobile .logo-mobile {
+  float: left;
+}
+/* line 169, ../../app/styles/pagestyles/header.scss */
+.nav-mobile .logo-mobile img {
+  margin-top: 27px;
+}
+/* line 174, ../../app/styles/pagestyles/header.scss */
+.nav-mobile .nav-jump-to {
+  float: right;
+  margin-top: 27px;
+  cursor: pointer;
+}
+/* line 179, ../../app/styles/pagestyles/header.scss */
+.nav-mobile .nav-jump-to .nav-arrow {
+  display: inline-block;
+  background: url(../images/_mobile/nav-arrow-sprite.png) 0 0;
+  height: 16px;
+  width: 31px;
+}
+/* line 184, ../../app/styles/pagestyles/header.scss */
+.nav-mobile .nav-jump-to .nav-arrow.active {
+  background-position: 0 16px;
+}
+/* line 190, ../../app/styles/pagestyles/header.scss */
+.nav-mobile .jump-to {
+  display: inline-block;
+  color: #666;
+  margin-left: 10px;
+}
+/* line 196, ../../app/styles/pagestyles/header.scss */
+.nav-mobile .nav-list {
+  display: none;
+}
+/* line 200, ../../app/styles/pagestyles/header.scss */
+.nav-mobile ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  clear: both;
+}
+/* line 206, ../../app/styles/pagestyles/header.scss */
+.nav-mobile li {
+  background-color: white;
+  height: 100px;
+  width: 100%;
+  border-top: 1px #c4c4c4 solid;
+  line-height: 100px;
+}
+/* line 213, ../../app/styles/pagestyles/header.scss */
+.nav-mobile a {
+  text-decoration: none;
+  color: #666;
+}
+
+/**
+  This is where responsive break points are defined. Using Sass mixins They must be included first 
+
+
+  EXAMPLE USAGE:
+
+  #elemID {
+    width: 1200px;
+    @include respond-to(mobile) {
+      width: 100%;  
+    }
+  }
+
+  //container widths within break points: 1200px, (960px => default), 748px, 100%;
+*/
+/* line 2, ../../app/styles/pagestyles/splash.scss */
+.splash {
+  width: 100%;
+  height: 100%;
+  min-height: 768px;
+  background-image: url("../images/bbh-0237-b.png");
+  background-position: 50% 50%; 
+  position: relative;
+  /* Large desktop */
+  /* Portrait tablet to landscape and desktop */
+  /* Landscape phones and down */
+}
+@media only screen and (min-width: 1300px) {
+  /* line 2, ../../app/styles/pagestyles/splash.scss */
+  .splash {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  /* line 2, ../../app/styles/pagestyles/splash.scss */
+  .splash {
+    width: 100%;
+    height: 680px;
+  }
+}
+@media only screen and (max-width: 660px) {
+  /* line 2, ../../app/styles/pagestyles/splash.scss */
+  .splash {
+    width: 100%;
+    height: 730px;
+  }
+}
+/* line 19, ../../app/styles/pagestyles/splash.scss */
+.splash .span12 {
+  color: #fff;
+  /* Landscape phone to portrait tablet */
+}
+@media only screen and (min-width: 661px) and (max-width: 767px) {
+  /* line 19, ../../app/styles/pagestyles/splash.scss */
+  .splash .span12 {
+    width: 644px;
+  }
+}
+/* line 27, ../../app/styles/pagestyles/splash.scss */
+.splash .main-heading {
+  font-family: "UniversLTW01-47LightCn", sans-serif;
+  font-size: 55px;
+  line-height: 75px;
+  margin-top: 120px;
+  margin-bottom: 45px;
+  text-align: center;
+  letter-spacing: 10px;
+  font-weight: 100;
+  /* Large desktop */
+  /* Portrait tablet to landscape and desktop */
+  /* Landscape phone to portrait tablet */
+  /* Landscape phones and down */
+}
+@media only screen and (min-width: 1300px) {
+  /* line 27, ../../app/styles/pagestyles/splash.scss */
+  .splash .main-heading {
+    margin-top: 230px;
+    font-size: 65px;
+    line-height: 90px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  /* line 27, ../../app/styles/pagestyles/splash.scss */
+  .splash .main-heading {
+    margin-top: 120px;
+  }
+}
+@media only screen and (min-width: 661px) and (max-width: 767px) {
+  /* line 27, ../../app/styles/pagestyles/splash.scss */
+  .splash .main-heading {
+    margin-top: 120px;
+  }
+}
+@media only screen and (max-width: 660px) {
+  /* line 27, ../../app/styles/pagestyles/splash.scss */
+  .splash .main-heading {
+    font-size: 65px;
+    line-height: 90px;
+    width: 87.5%;
+    margin: 100px auto 0 auto;
+  }
+}
+/* line 56, ../../app/styles/pagestyles/splash.scss */
+.splash .know-box {
+  font-size: 12px;
+  letter-spacing: 5px;
+  border: 1px solid white;
+  padding: 25px 10px;
+  width: 370px;
+  margin: 0 auto 40px;
+  text-align: center;
+  /* Landscape phone to portrait tablet */
+  /* Landscape phones and down */
+}
+@media only screen and (min-width: 661px) and (max-width: 767px) {
+  /* line 56, ../../app/styles/pagestyles/splash.scss */
+  .splash .know-box {
+    display: none;
+  }
+}
+@media only screen and (max-width: 660px) {
+  /* line 56, ../../app/styles/pagestyles/splash.scss */
+  .splash .know-box {
+    display: none;
+  }
+}
+/* line 74, ../../app/styles/pagestyles/splash.scss */
+.splash .arrow {
+  width: 50px;
+  margin: 0 auto;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 74, ../../app/styles/pagestyles/splash.scss */
+  .splash .arrow {
+    display: none;
+  }
+}
+/* line 83, ../../app/styles/pagestyles/splash.scss */
+.splash .hexagon {
+  width: 78px;
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  margin: -39px;
+}
+
+/**
+  This is where responsive break points are defined. Using Sass mixins They must be included first 
+
+
+  EXAMPLE USAGE:
+
+  #elemID {
+    width: 1200px;
+    @include respond-to(mobile) {
+      width: 100%;  
+    }
+  }
+
+  //container widths within break points: 1200px, (960px => default), 748px, 100%;
+*/
+/* line 2, ../../app/styles/pagestyles/philosophy.scss f*/
+.philosophy {
+  float: left;
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  /* Large desktop */
+  /* Portrait tablet to landscape and desktop */
+  /* Landscape phone to portrait tablet */
+  /* Landscape phones and down */
+}
+@media only screen and (min-width: 1300px) {
+  /* line 2, ../../app/styles/pagestyles/philosophy.scss */
+  .philosophy {
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  /* line 2, ../../app/styles/pagestyles/philosophy.scss */
+  .philosophy {
+    height: 650px;
+  }
+}
+@media only screen and (min-width: 661px) and (max-width: 767px) {
+  /* line 2, ../../app/styles/pagestyles/philosophy.scss */
+  .philosophy {
+    height: 650px;
+  }
+}
+@media only screen and (max-width: 660px) {
+  /* line 2, ../../app/styles/pagestyles/philosophy.scss */
+  .philosophy {
+    height: 1130px;
+  }
+}
+/* line 11, ../../app/styles/pagestyles/philosophy.scss */
+.philosophy .subheading {
+  margin: 0;
+  /* Portrait tablet to landscape and desktop */
+  /* Landscape phones and down */
+}
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  /* line 11, ../../app/styles/pagestyles/philosophy.scss */
+  .philosophy .subheading {
+    margin-top: 0;
+  }
+}
+@media only screen and (max-width: 660px) {
+  /* line 11, ../../app/styles/pagestyles/philosophy.scss */
+  .philosophy .subheading {
+  }
+}
+/* line 22, ../../app/styles/pagestyles/philosophy.scss */
+.philosophy .copy {
+  color: #333;
+}
+/* line 25, ../../app/styles/pagestyles/philosophy.scss */
+.philosophy .copy-box {
+  width: 100%;
+}
+
+
+
+/* line 5, ../../app/styles/pagestyles/clients.scss */
+.philosophy .container-logos {
+  clear: both;
+}
+/* line 9, ../../app/styles/pagestyles/clients.scss */
+.philosophy .client-email {
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 9, ../../app/styles/pagestyles/clients.scss */
+  .philosophy .client-email {
+    color: #00cbd6;
+  }
+}
+/* line 15, ../../app/styles/pagestyles/clients.scss */
+.philosophy .logos-wrapper {
+  margin: 0 auto;
+  clear: both;
+}
+/* line 18, ../../app/styles/pagestyles/clients.scss */
+.philosophy .logos-wrapper.span12 {
+  width: 100%;
+}
+/* line 23, ../../app/styles/pagestyles/clients.scss */
+.philosophy .client-logos {
+  margin: 1px 0 0 1px;
+  text-align: center;
+  clear: both;
+}
+/* line 28, ../../app/styles/pagestyles/clients.scss */
+.philosophy .client-logos.img {
+  margin-top: 100px;
+}
+/* line 33, ../../app/styles/pagestyles/clients.scss */
+.philosophy .logos {
+  border: 1px #f0f0f0 solid;
+  margin: -1px 0 0 -1px;
+  height: 250px;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* Landscape phones and down */
+}
+
+
+
+
+
+/**
+  This is where responsive break points are defined. Using Sass mixins They must be included first 
+
+
+  EXAMPLE USAGE:
+
+  #elemID {
+    width: 1200px;
+    @include respond-to(mobile) {
+      width: 100%;  
+    }
+  }
+
+  //container widths within break points: 1200px, (960px => default), 748px, 100%;
+
+**/
+
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  /* line 2, ../../app/styles/pagestyles/services.scss */
+  .services {
+    height: 745px;
+  }
+}
+@media only screen and (min-width: 661px) and (max-width: 767px) {
+  /* line 2, ../../app/styles/pagestyles/services.scss */
+  .services {
+    height: 760px;
+  }
+}
+@media only screen and (max-width: 660px) {
+  /* line 2, ../../app/styles/pagestyles/services.scss */
+  .services {
+    height: auto;
+  }
+}
+/* line 15, ../../app/styles/pagestyles/services.scss */
+.services .subheading {
+  color: #000;
+  /* Portrait tablet to landscape and desktop */
+  /* Landscape phone to portrait tablet */
+}
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  /* line 15, ../../app/styles/pagestyles/services.scss */
+  .services .subheading {
+  }
+}
+@media only screen and (min-width: 661px) and (max-width: 767px) {
+  /* line 15, ../../app/styles/pagestyles/services.scss */
+  .services .subheading {
+  }
+}
+
+
+
+
+#services {
+  width: 100%;
+  height: 727px;
+  color:red;
+}
+
+
+.services .copy { color: #111; }
+
+
+.services #icons {
+  width: 100%;
+  height:500px;
+  margin: 1em;
+  padding: 1em;
+  display: inline;
+  background: blue;
+}
+
+
+.services .icon {
+  width: 86px;
+  height: 86px;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  background: purple;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  /* line 30, ../../app/styles/pagestyles/services.scss */
+  .services .icons {
+    width: 100%;
+    text-align: center;
+    margin-top: 60px;
+  }
+}
+@media only screen and (min-width: 661px) and (max-width: 767px) {
+  /* line 30, ../../app/styles/pagestyles/services.scss */
+  .services .icons {
+    width: 388px;
+    text-align: center;
+    margin-top: 60px;
+  }
+}
+@media only screen and (max-width: 660px) {
+  /* line 30, ../../app/styles/pagestyles/services.scss */
+  .services .icons {
+    width: 100%;
+    text-align: center;
+    margin-top: 100px;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  /* line 50, ../../app/styles/pagestyles/services.scss */
+  .services .icon {
+    width: 100%;
+    clear: both;
+    display: inline-block;
+    height: 200px;
+
+  }
+}
+/* line 60, ../../app/styles/pagestyles/services.scss */
+.services .icon .icon-detail {
+  display: none;
+  position: absolute;
+  top: -125%;
+  left: -120%;
+  z-index: 100;
+}
+/* line 67, ../../app/styles/pagestyles/services.scss */
+.services .icon .icon-detail ul {
+  list-style: none;
+  color: #fff;
+  margin-top: 30px;
+  font-family: georgia, serif;
+  font-size: 14px;
+  font-style: italic;
+}
+/* line 76, ../../app/styles/pagestyles/services.scss */
+.services .icon .icon-detail li {
+  margin-bottom: 10px;
+  text-align: left;
+}
+/* line 81, ../../app/styles/pagestyles/services.scss */
+.services .icon .icon-detail .icon-blue-dot {
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+/* line 88, ../../app/styles/pagestyles/services.scss */
+.services .icon:hover, .services .icon .active {
+  /* Landscape phones and down */
+}
+/* line 89, ../../app/styles/pagestyles/services.scss */
+.services .icon:hover .icon-detail, .services .icon .active .icon-detail {
+  display: block;
+  background-image: url(../images/services/popup.png);
+  height: 197px;
+  width: 310px;
+}
+@media only screen and (max-width: 660px) {
+  /* line 88, ../../app/styles/pagestyles/services.scss */
+  .services .icon:hover, .services .icon .active {
+    display: none;
+  }
+}
+/* line 102, ../../app/styles/pagestyles/services.scss */
+.services .icon.icon-strategy {
+  margin-left: 0;
+}
+/* line 104, ../../app/styles/pagestyles/services.scss */
+.services .icon.icon-strategy .icon-img {
+  background: url(../images/clients/sony-playstation.png) 0 0;
+    background-repeat: no-repeat;
+    background-size: 75%; 
+    width:145px;
+    height: 145px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 104, ../../app/styles/pagestyles/services.scss */
+  .services .icon.icon-strategy .icon-img {
+    background-image: url(../images/clients/sony-playstation.png);
+    width:145px;
+    height: 145px;
+  }
+}
+/* line 113, ../../app/styles/pagestyles/services.scss */
+.services .icon.icon-strategy .icon-img:hover {
+  cursor:pointer;
+}
+
+
+
+
+
+/* line 120, ../../app/styles/pagestyles/services.scss */
+.services .icon.icon-ux .icon-img {
+    background: url(../images/clients/tiffany.png) 0 0;
+    background-repeat: no-repeat;
+    background-size: 75%; 
+    width:145px;
+    height: 145px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 120, ../../app/styles/pagestyles/services.scss */
+  .services .icon.icon-ux .icon-img {
+    background-image: url(../images/clients/tiffany.png);
+    width:145px;
+    height: 145px;
+  }
+}
+/* line 129, ../../app/styles/pagestyles/services.scss */
+.services .icon.icon-ux .icon-img:hover {
+  cursor:pointer;
+}
+/* line 135, ../../app/styles/pagestyles/services.scss */
+.services .icon.icon-web {
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 135, ../../app/styles/pagestyles/services.scss */
+  .services .icon.icon-web {
+    width:145px;
+    height: 145px;  }
+}
+/* line 140, ../../app/styles/pagestyles/services.scss */
+.services .icon.icon-web .icon-img {
+  background: url(../images/clients/vaseline.png) 0 0;
+    background-repeat: no-repeat;
+    background-size: 75%; 
+    width:145px;
+    height: 145px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 140, ../../app/styles/pagestyles/services.scss */
+  .services .icon.icon-web .icon-img {
+     background: url(../images/clients/vaseline.png);
+    width:145px;
+    height: 145px;
+  }
+}
+/* line 149, ../../app/styles/pagestyles/services.scss */
+.services .icon.icon-web .icon-img:hover {
+  cursor:pointer;
+}
+/* line 155, ../../app/styles/pagestyles/services.scss */
+.services .icon.icon-tech {
+  /* Portrait tablet to landscape and desktop */
+  /* Landscape phone to portrait tablet */
+  /* Landscape phones and down */
+}
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  /* line 155, ../../app/styles/pagestyles/services.scss */
+  .services .icon.icon-tech {
+    margin-left: 0px;
+    margin-top: 34px;
+  }
+}
+@media only screen and (min-width: 661px) and (max-width: 767px) {
+  /* line 155, ../../app/styles/pagestyles/services.scss */
+  .services .icon.icon-tech {
+    margin-left: 0px;
+    margin-top: 34px;
+  }
+}
+@media only screen and (max-width: 660px) {
+  /* line 155, ../../app/styles/pagestyles/services.scss */
+  .services .icon.icon-tech {
+    margin-left: 0px;
+    margin-top: 65px;
+  }
+}
+/* line 168, ../../app/styles/pagestyles/services.scss */
+.services .icon.icon-tech .icon-img {
+  background: url(../images/clients/bankofnewyork.png) 0 0;
+    background-repeat: no-repeat;
+    background-size: 75%; 
+    width:145px;
+    height: 145px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 168, ../../app/styles/pagestyles/services.scss */
+  .services .icon.icon-tech .icon-img {
+    background-image: url(../images/clients/bankofnewyork.png);
+    width:145px;
+    height: 145px;
+  }
+}
+/* line 179, ../../app/styles/pagestyles/services.scss */
+.services .icon.icon-tech .icon-img:hover {
+  cursor:pointer;
+}
+
+
+/* line 186, ../../app/styles/pagestyles/services.scss */
+.services .icon.icon-social .icon-img {
+  background: url(../images/clients/blackberry.png) 0 0;
+    background-repeat: no-repeat;
+    background-size: 75%; 
+    width:145px;
+    height: 145px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 186, ../../app/styles/pagestyles/services.scss */
+  .services .icon.icon-social .icon-img {
+    background-image: url(../images/clients/blackberry.png);
+    width:145px;
+    height: 145px;
+  }
+}
+/* line 196, ../../app/styles/pagestyles/services.scss */
+.services .icon.icon-social .icon-img:hover {
+  cursor:pointer;
+}
+
+
+
+/* line 203, ../../app/styles/pagestyles/services.scss */
+.services .icon.icon-marketing .icon-img {
+  background: url(../images/clients/rubbermaid.png) 0 0;
+    background-repeat: no-repeat;
+    background-size: 75%; 
+    height: 150px;
+    width: 150px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 203, ../../app/styles/pagestyles/services.scss */
+  .services .icon.icon-marketing .icon-img {
+    background-image: url(../images/clients/rubbermaid.png);
+    height: 150px;
+    width: 150px;
+  }
+}
+/* line 213, ../../app/styles/pagestyles/services.scss */
+.services .icon.icon-marketing .icon-img:hover {
+  cursor:pointer;
+}
+/* line 220, ../../app/styles/pagestyles/services.scss */
+.services .icon .icon-caption {
+  color: #fff;
+  font-family: "UniversLTW01-57Condense 723821", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 12px;
+  letter-spacing: 1px;
+
+}
+
+.services .copy-box{
+  margin-top: 175px;
+  width:90%;
+}
+
+
+@media only screen and (max-width: 660px) {
+.services .copy-box p{
+  font-size: 12px;
+  line-height: 18px;
+}
+
+}
+/**
+  This is where responsive break points are defined. Using Sass mixins They must be included first 
+
+
+  EXAMPLE USAGE:
+
+  #elemID {
+    width: 1200px;
+    @include respond-to(mobile) {
+      width: 100%;  
+    }
+  }
+
+  //container widths within break points: 1200px, (960px => default), 748px, 100%;
+*/
+/* line 2, ../../app/styles/pagestyles/clients.scss */
+#clients {
+  width: 100%;
+  height: 100%;
+  background: white;
+}
+
+
+
+
+/* line 5, ../../app/styles/pagestyles/clients.scss */
+.clients .container-logos {
+  clear: both;
+}
+/* line 9, ../../app/styles/pagestyles/clients.scss */
+.clients .client-email {
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 9, ../../app/styles/pagestyles/clients.scss */
+  .clients .client-email {
+    color: #00cbd6;
+  }
+}
+/* line 15, ../../app/styles/pagestyles/clients.scss */
+.clients .logos-wrapper {
+  margin: 0 auto;
+  clear: both;
+}
+/* line 18, ../../app/styles/pagestyles/clients.scss */
+.clients .logos-wrapper.span12 {
+  width: 100%;
+}
+/* line 23, ../../app/styles/pagestyles/clients.scss */
+.clients .client-logos {
+  margin: 1px 0 0 1px;
+  text-align: center;
+  clear: both;
+}
+/* line 28, ../../app/styles/pagestyles/clients.scss */
+.clients .client-logos.img {
+  margin-top: 100px;
+}
+/* line 33, ../../app/styles/pagestyles/clients.scss */
+.clients .logos {
+  border: 1px #f0f0f0 solid;
+  margin: -1px 0 0 -1px;
+  height: 250px;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* Landscape phones and down */
+}
+/* line 43, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-google {
+  background-image: url(../images/clients/google.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 48, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-playstation {
+  background-image: url(../images/clients/sony-playstation.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 53, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-ch {
+  background-image: url(../images/clients/c-h.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 58, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-baileys {
+  background-image: url(../images/clients/baileys.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 63, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-dove {
+  background-image: url(../images/clients/dove-men.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 68, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-axe {
+  background-image: url(../images/clients/axe.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 73, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-british-airways {
+  background-image: url(../images/clients/british-airways.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 78, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-westin-hotels {
+  background-image: url(../images/clients/westin-hotels.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 83, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-unicef {
+  background-image: url(../images/clients/unicef.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 88, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-vaseline {
+  background-image: url(../images/clients/vaseline.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 93, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-rubbermaid {
+  background-image: url(../images/clients/rubbermaid.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 98, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-irwin {
+  background-image: url(../images/clients/irwin.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 103, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-goody {
+  background-image: url(../images/clients/goody.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 108, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-world-gold-council {
+  background-image: url(../images/clients/world-gold-council.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 113, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-sharpie {
+  background-image: url(../images/clients/sharpie.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* line 118, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-graco {
+  background-image: url(../images/clients/graco.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* line 123, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-dymo {
+  background-image: url(../images/clients/dymo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 68, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-calphalon {
+  background-image: url(../images/clients/calphalon.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 73, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-parker {
+  background-image: url(../images/clients/parker.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 78, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-aprica {
+  background-image: url(../images/clients/aprica.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 83, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-waterman {
+  background-image: url(../images/clients/waterman.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 88, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-papermate {
+  background-image: url(../images/clients/papermate.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 93, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-lenox {
+  background-image: url(../images/clients/lenox.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 98, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-blackberry {
+  background-image: url(../images/clients/blackberry.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 103, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-tiffany {
+  background-image: url(../images/clients/tiffany.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 108, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-hilmor {
+  background-image: url(../images/clients/hilmor.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 113, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-rotring {
+  background-image: url(../images/clients/rotring.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* line 118, ../../app/styles/pagestyles/clients.scss */
+.clients .logos.logo-teutonia {
+  background-image: url(../images/clients/teutonia.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media only screen and (max-width: 660px) {
+  /* line 33, ../../app/styles/pagestyles/clients.scss */
+  .clients .logos {
+    border: none;
+  }
+}
+
+/**
+  This is where responsive break points are defined. Using Sass mixins They must be included first 
+
+
+  EXAMPLE USAGE:
+
+  #elemID {
+    width: 1200px;
+    @include respond-to(mobile) {
+      width: 100%;  
+    }
+  }
+
+
+
+
+  //container widths within break points: 1200px, (960px => default), 748px, 100%;
+*/
+/* line 2, ../../app/styles/pagestyles/wonderfile.scss */
+.wonderfile {
+  width: 100%;
+  height: 1700px;
+  background-image: url("../images/bbh-.jpg");
+  /* Landscape phones and down */
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 660px) {
+  /* line 2, ../../app/styles/pagestyles/wonderfile.scss */
+  .wonderfile {
+  height: 1290px;
+  }
+}
+/* line 9, ../../app/styles/pagestyles/wonderfile.scss */
+.wonderfile .span12 {
+  position: absolute;
+  /* Landscape phone to portrait tablet */
+}
+@media only screen and (min-width: 661px) and (max-width: 767px) {
+  /* line 9, ../../app/styles/pagestyles/wonderfile.scss */
+  .wonderfile .span12 {
+    position: static;
+  }
+}
+/* line 15, ../../app/styles/pagestyles/wonderfile.scss */
+.wonderfile .subheading, .wonderfile .copy {
+  color: #000;
+}
+
+/* line 19, ../../app/styles/pagestyles/wonderfile.scss */
+.wonderfile .subheading {
+  /* Landscape phones and down */
+}
+
+/* line 15, ../../app/styles/pagestyles/wonderfile.scss */
+.wonderfile .subheading-2, .wonderfile .copy {
+  color: #000;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* line 19, ../../app/styles/pagestyles/wonderfile.scss */
+.wonderfile .subheading-2 {
+  font-size: 18px;
+  text-align: center;  
+  /* Landscape phones and down */
+}
+
+@media only screen and (max-width: 660px) {
+  /* line 19, ../../app/styles/pagestyles/wonderfile.scss */
+  .wonderfile .subheading {
+  }
+}
+/* line 26, ../../app/styles/pagestyles/wonderfile.scss */
+.wonderfile .copy {
+    text-align: left;
+    font-size: 15px;
+
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 26, ../../app/styles/pagestyles/wonderfile.scss */
+  .wonderfile .copy {
+    line-height: 55px;
+  }
+}
+/* line 32, ../../app/styles/pagestyles/wonderfile.scss */
+.wonderfile .download-button {
+  width: 260px;
+  text-align: center;
+  margin: 70px auto 65px auto;
+  color: #000;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 32, ../../app/styles/pagestyles/wonderfile.scss */
+  .wonderfile .download-button {
+    display: none;
+  }
+}
+/* line 40, ../../app/styles/pagestyles/wonderfile.scss */
+.wonderfile .download-button a {
+  text-decoration: none;
+}
+/* line 45, ../../app/styles/pagestyles/wonderfile.scss */
+.wonderfile .download-text {
+  text-align: left;
+  display: inline-block;
+  margin-left: 15px;
+}
+/* line 50, ../../app/styles/pagestyles/wonderfile.scss */
+.wonderfile .download {
+  color: #000;
+  font-size: 33px;
+  letter-spacing: 3px;
+  font-family: 'UniversLTW10-57Condense 726513';
+}
+/* line 57, ../../app/styles/pagestyles/wonderfile.scss */
+.wonderfile .mb {
+  color: #000;
+  font-family: georgia, serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+/* line 64, ../../app/styles/pagestyles/wonderfile.scss */
+.wonderfile .wonderfile-icon {
+  position: absolute;
+  left: 50%;
+  margin-left: -95px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 64, ../../app/styles/pagestyles/wonderfile.scss */
+  .wonderfile .wonderfile-icon {
+    margin-top: 65px;
+  }
+}
+
+/**
+  This is where responsive break points are defined. Using Sass mixins They must be included first 
+
+
+  EXAMPLE USAGE:
+
+  #elemID {
+    width: 1200px;
+    @include respond-to(mobile) {
+      width: 100%;  
+    }
+  }
+
+  //container widths within break points: 1200px, (960px => default), 748px, 100%;
+*/
+/* line 2, ../../app/styles/pagestyles/social.scss */
+.awards {
+  width: 100%;
+  height:650px;
+  color: #333;
+  /* Landscape phones and down */
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 660px) {
+  /* line 2, ../../app/styles/pagestyles/social.scss */
+  .awards {
+    display: none;
+  }
+}
+/* line 8, ../../app/styles/pagestyles/social.scss */
+.awards .subheading {
+}
+/* line 12, ../../app/styles/pagestyles/social.scss */
+.awards .awards-icon {
+  margin-top: 25px;
+}
+/* line 14, ../../app/styles/pagestyles/social.scss */
+.awards .awards-icon.awards-icon-fb {
+  display: inline-block;
+  background-image: url(../images/icon-fb-grey.png);
+  height: 50px;
+  width: 50px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 14, ../../app/styles/pagestyles/social.scss */
+  .awards .awards-icon.awards-icon-fb {
+    background-image: url(../images/_mobile/icon-fb.png);
+    height: 100px;
+    width: 100px;
+  }
+}
+/* line 24, ../../app/styles/pagestyles/social.scss */
+.awards .awards-icon.awards-icon-fb:hover {
+  background-image: url(../images/icon-fb-blue.png);
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 24, ../../app/styles/pagestyles/social.scss */
+  .awards .awards-icon.awards-icon-fb:hover {
+    display: none;
+  }
+}
+/* line 31, ../../app/styles/pagestyles/social.scss */
+.awards .awards-icon.awards-icon-twitter {
+  display: inline-block;
+  background-image: url(../images/icon-twitter-grey.png);
+  height: 50px;
+  width: 50px;
+  margin-left: 20px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 31, ../../app/styles/pagestyles/social.scss */
+  .awards .awards-icon.awards-icon-twitter {
+    background-image: url(../images/_mobile/icon-twitter.png);
+    height: 100px;
+    width: 100px;
+  }
+}
+/* line 42, ../../app/styles/pagestyles/social.scss */
+.awards .awards-icon.awards-icon-twitter:hover {
+  background-image: url(../images/icon-twitter-blue.png);
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 42, ../../app/styles/pagestyles/social.scss */
+  .awards .awards-icon.awards-icon-twitter:hover {
+    display: none;
+  }
+}
+/* line 53, ../../app/styles/pagestyles/social.scss */
+.awards .copy-box {
+  margin-bottom: 110px;
+  text-align: left;
+  font-size: 13px;
+
+}
+
+
+
+
+
+/**
+  This is where responsive break points are defined. Using Sass mixins They must be included first 
+
+
+  EXAMPLE USAGE:
+
+  #elemID {
+    width: 1200px;
+    @include respond-to(mobile) {
+      width: 100%;  
+    }
+  }
+
+  //container widths within break points: 1200px, (960px => default), 748px, 100%;
+*/
+/* line 2, ../../app/styles/pagestyles/social.scss */
+.press {
+  width: 100%;
+  height:650px;
+  color: #333;
+  /* Landscape phones and down */
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 660px) {
+  /* line 2, ../../app/styles/pagestyles/social.scss */
+  .press {
+    display: none;
+  }
+}
+/* line 8, ../../app/styles/pagestyles/social.scss */
+.press .subheading {
+}
+/* line 12, ../../app/styles/pagestyles/social.scss */
+.press .press-icon {
+  margin-top: 25px;
+}
+/* line 14, ../../app/styles/pagestyles/social.scss */
+.press .press-icon.press-icon-fb {
+  display: inline-block;
+  background-image: url(../images/icon-fb-grey.png);
+  height: 50px;
+  width: 50px;
+  /* Landscape phones and down */
+}
+
+@media only screen and (max-width: 660px) {
+  /* line 14, ../../app/styles/pagestyles/social.scss */
+  .press .press-icon.press-icon-fb {
+    background-image: url(../images/_mobile/icon-fb.png);
+    height: 100px;
+    width: 100px;
+  }
+}
+
+/* line 24, ../../app/styles/pagestyles/social.scss */
+.press .press-icon.press-icon-fb:hover {
+  background-image: url(../images/icon-fb-blue.png);
+  /* Landscape phones and down */
+}
+
+@media only screen and (max-width: 660px) {
+  /* line 24, ../../app/styles/pagestyles/social.scss */
+  .press .press-icon.press-icon-fb:hover {
+    display: none;
+  }
+}
+
+/* line 31, ../../app/styles/pagestyles/social.scss */
+.press .press-icon.press-icon-twitter {
+  display: inline-block;
+  background-image: url(../images/icon-twitter-grey.png);
+  height: 50px;
+  width: 50px;
+  margin-left: 20px;
+  /* Landscape phones and down */
+}
+
+@media only screen and (max-width: 660px) {
+  /* line 31, ../../app/styles/pagestyles/social.scss */
+  .press .press-icon.press-icon-twitter {
+    background-image: url(../images/_mobile/icon-twitter.png);
+    height: 100px;
+    width: 100px;
+  }
+}
+
+/* line 42, ../../app/styles/pagestyles/social.scss */
+.press .press-icon.press-icon-twitter:hover {
+  background-image: url(../images/icon-twitter-blue.png);
+  /* Landscape phones and down */
+}
+
+@media only screen and (max-width: 660px) {
+  /* line 42, ../../app/styles/pagestyles/social.scss */
+  .press .press-icon.press-icon-twitter:hover {
+    display: none;
+  }
+}
+
+/* line 53, ../../app/styles/pagestyles/social.scss */
+.press .copy-box {
+  margin-bottom: 110px;
+  text-align: left;
+  font-size: 13px;
+}
+
+
+
+
+
+
+
+
+
+/**
+  This is where responsive break points are defined. Using Sass mixins They must be included first 
+
+
+  EXAMPLE USAGE:
+
+  #elemID {
+    width: 1200px;
+    @include respond-to(mobile) {
+      width: 100%;  
+    }
+  }
+
+  //container widths within break points: 1200px, (960px => default), 748px, 100%;
+*/
+/* line 26, ../../app/styles/pagestyles/carousel.scss */
+.container-carousel {
+  width: 100%;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 26, ../../app/styles/pagestyles/carousel.scss */
+  .container-carousel {
+    display: none;
+  }
+}
+
+/* line 33, ../../app/styles/pagestyles/carousel.scss */
+div.ic_myCarousel {
+  width: 100%;
+  margin: 0 0;
+  clear: both;
+}
+
+/* line 39, ../../app/styles/pagestyles/carousel.scss */
+.infiniteCarousel {
+  margin: 0 0 !important;
+  width: 100%;
+}
+
+/* line 43, ../../app/styles/pagestyles/carousel.scss */
+.ic_wrapper {
+  width: 100% !important;
+  padding: 0;
+}
+
+/* line 47, ../../app/styles/pagestyles/carousel.scss */
+.ic_myCarousel .ic_active {
+  background: #fff;
+  border: 2px solid #880000;
+}
+
+/* line 51, ../../app/styles/pagestyles/carousel.scss */
+.ic_peek_padding {
+  padding: 0 16.5%;
+  box-sizing: border-box;
+}
+
+/**
+  This is where responsive break points are defined. Using Sass mixins They must be included first 
+
+
+  EXAMPLE USAGE:
+
+  #elemID {
+    width: 1200px;
+    @include respond-to(mobile) {
+      width: 100%;  
+    }
+  }
+
+  //container widths within break points: 1200px, (960px => default), 748px, 100%;
+*/
+/* line 2, ../../app/styles/pagestyles/twitter.scss */
+.twitter {
+  height: 100%;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 2, ../../app/styles/pagestyles/twitter.scss */
+  .twitter {
+    display: none;
+  }
+}
+/* line 9, ../../app/styles/pagestyles/twitter.scss */
+.twitter .twitter-feed {
+  margin: 85px auto;
+}
+/* line 14, ../../app/styles/pagestyles/twitter.scss */
+.twitter .at-wondersauce {
+  font-family: "UniversLTW01-57Condense 723821", sans-serif;
+  font-size: 50px;
+  color: #aaa;
+  text-align: center;
+  margin-bottom: 33px;
+  /* Landscape phones and down */
+}
+/* line 20, ../../app/styles/pagestyles/twitter.scss */
+.twitter .at-wondersauce a {
+  text-decoration: none;
+  color: #aaa;
+}
+@media only screen and (max-width: 660px) {
+  /* line 14, ../../app/styles/pagestyles/twitter.scss */
+  .twitter .at-wondersauce {
+    font-size: 51px;
+    color: #00cbd6;
+  }
+}
+/* line 30, ../../app/styles/pagestyles/twitter.scss */
+.twitter .tweet {
+  width: 600px;
+  margin: 0 auto;
+  /* Landscape phone to portrait tablet */
+  /* Landscape phones and down */
+}
+@media only screen and (min-width: 661px) and (max-width: 767px) {
+  /* line 30, ../../app/styles/pagestyles/twitter.scss */
+  .twitter .tweet {
+    width: 95%;
+  }
+}
+@media only screen and (max-width: 660px) {
+  /* line 30, ../../app/styles/pagestyles/twitter.scss */
+  .twitter .tweet {
+    width: 95%;
+  }
+}
+/* line 36, ../../app/styles/pagestyles/twitter.scss */
+.twitter .tweet-text {
+  text-align: center;
+  font-family: georgia;
+  font-style: italic;
+  font-size: 19px;
+  line-height: 32px;
+  height: 114px;
+  margin: 0;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 36, ../../app/styles/pagestyles/twitter.scss */
+  .twitter .tweet-text {
+    font-size: 36px;
+    line-height: 62px;
+    font-style: none;
+  }
+}
+/* line 51, ../../app/styles/pagestyles/twitter.scss */
+.twitter .tweet-date {
+  text-align: center;
+  font-family: "UniversLTW01-57Condense 723821", sans-serif;
+  color: #ccc;
+  font-size: 16px;
+  margin: 0 0 40px 0;
+}
+/* line 59, ../../app/styles/pagestyles/twitter.scss */
+.twitter .tweet-arrows {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  cursor: pointer;
+}
+/* line 66, ../../app/styles/pagestyles/twitter.scss */
+.twitter .prev-arrow {
+  cursor: pointer;
+  display: inline-block;
+  background: url(../images/arrow-prev-sprite.png) 0 50px;
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 66, ../../app/styles/pagestyles/twitter.scss */
+  .twitter .prev-arrow {
+    background-image: url(../images/_mobile/arrow-prev-grey.png);
+    height: 100px;
+    width: 100px;
+    margin-right: 20px;
+  }
+}
+/* line 80, ../../app/styles/pagestyles/twitter.scss */
+.twitter .prev-arrow:hover {
+  background: url(../images/arrow-prev-sprite.png) 0 0;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 80, ../../app/styles/pagestyles/twitter.scss */
+  .twitter .prev-arrow:hover {
+    display: none;
+  }
+}
+/* line 87, ../../app/styles/pagestyles/twitter.scss */
+.twitter .next-arrow {
+  cursor: pointer;
+  display: inline-block;
+  background: url(../images/arrow-next-sprite.png) 0 50px;
+  height: 50px;
+  width: 50px;
+  margin-left: 10px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 87, ../../app/styles/pagestyles/twitter.scss */
+  .twitter .next-arrow {
+    background-image: url(../images/_mobile/arrow-next-grey.png);
+    height: 100px;
+    width: 100px;
+    margin-left: 20px;
+  }
+}
+/* line 101, ../../app/styles/pagestyles/twitter.scss */
+.twitter .next-arrow:hover {
+  background: url(../images/arrow-next-sprite.png) 0 0;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 101, ../../app/styles/pagestyles/twitter.scss */
+  .twitter .next-arrow:hover {
+    display: none;
+  }
+}
+
+/**
+  This is where responsive break points are defined. Using Sass mixins They must be included first 
+
+
+  EXAMPLE USAGE:
+
+  #elemID {
+    width: 1200px;
+    @include respond-to(mobile) {
+      width: 100%;  
+    }
+  }
+
+  //container widths within break points: 1200px, (960px => default), 748px, 100%;
+*/
+/* line 3, ../../app/styles/pagestyles/footer.scss */
+.footer {
+  height: 480px;
+  background-color: #000;
+  color: #fff;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 3, ../../app/styles/pagestyles/footer.scss */
+  .footer {
+    height: 1087px;
+  }
+}
+/* line 12, ../../app/styles/pagestyles/footer.scss */
+.footer .awards {
+  width: 100%;
+  margin: 60px auto 0 auto;
+  text-align: center;
+}
+/* line 17, ../../app/styles/pagestyles/footer.scss */
+.footer .awards .awards-icon-fb {
+  display: inline-block;
+  background: url(../images/footer-fb-sprite.png) 0 0;
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 17, ../../app/styles/pagestyles/footer.scss */
+  .footer .awards .awards-icon-fb {
+    background-image: url(../images/_mobile/icon-fb.png);
+    height: 100px;
+    width: 100px;
+  }
+}
+/* line 28, ../../app/styles/pagestyles/footer.scss */
+.footer .awards .awards-icon-fb:hover {
+  background: url(../images/footer-fb-sprite.png) 0 50px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 28, ../../app/styles/pagestyles/footer.scss */
+  .footer .awards .awards-icon-fb:hover {
+    display: none;
+  }
+}
+/* line 35, ../../app/styles/pagestyles/footer.scss */
+.footer .awards .awards-icon-twitter {
+  display: inline-block;
+  background: url(../images/footer-twitter-sprite.png) 0 0;
+  height: 50px;
+  width: 50px;
+  margin-left: 10px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 35, ../../app/styles/pagestyles/footer.scss */
+  .footer .awards .awards-icon-twitter {
+    background-image: url(../images/_mobile/icon-twitter.png);
+    height: 100px;
+    width: 100px;
+  }
+}
+/* line 46, ../../app/styles/pagestyles/footer.scss */
+.footer .awards .awards-icon-twitter:hover {
+  background: url(../images/footer-twitter-sprite.png) 0 50px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 46, ../../app/styles/pagestyles/footer.scss */
+  .footer .awards .awards-icon-twitter:hover {
+    display: none;
+  }
+}
+/* line 54, ../../app/styles/pagestyles/footer.scss */
+.footer .contact {
+  text-align: center;
+  margin-top: 100px;
+}
+/* line 59, ../../app/styles/pagestyles/footer.scss */
+.footer .icon {
+  display: inline-block;
+  width: 160px;
+  margin-left: 45px;
+  /* Landscape phones and down */
+}
+/* line 63, ../../app/styles/pagestyles/footer.scss */
+.footer .icon a {
+  text-decoration: none;
+}
+/* line 65, ../../app/styles/pagestyles/footer.scss */
+.footer .icon.icon-phone {
+  margin-left: 0;
+  vertical-align: top;
+}
+/* line 69, ../../app/styles/pagestyles/footer.scss */
+.footer .icon.icon-phone .icon-img {
+  margin: 0 auto;
+  background-image: url(../images/icon-phone-grey.png);
+  height: 21px;
+  width: 22px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 69, ../../app/styles/pagestyles/footer.scss */
+  .footer .icon.icon-phone .icon-img {
+    background-image: url(../images/_mobile/icon-phone.png);
+    height: 43px;
+    width: 43px;
+  }
+}
+/* line 80, ../../app/styles/pagestyles/footer.scss */
+.footer .icon.icon-phone .icon-caption {
+  margin-top: 25px;
+  /* Landscape phones and down */
+}
+/* line 82, ../../app/styles/pagestyles/footer.scss */
+.footer .icon.icon-phone .icon-caption a {
+  color: #aaa;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 82, ../../app/styles/pagestyles/footer.scss */
+  .footer .icon.icon-phone .icon-caption a {
+    color: #2aced9;
+  }
+}
+@media only screen and (max-width: 660px) {
+  /* line 80, ../../app/styles/pagestyles/footer.scss */
+  .footer .icon.icon-phone .icon-caption {
+    color: #2aced9;
+  }
+}
+/* line 97, ../../app/styles/pagestyles/footer.scss */
+.footer .icon.icon-email {
+  vertical-align: top;
+}
+/* line 99, ../../app/styles/pagestyles/footer.scss */
+.footer .icon.icon-email .icon-img {
+  margin: 0 auto;
+  background: url(../images/icon-email-sprite.png) 0 0;
+  height: 15px;
+  width: 21px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 99, ../../app/styles/pagestyles/footer.scss */
+  .footer .icon.icon-email .icon-img {
+    background-image: url(../images/_mobile/icon-email.png);
+    width: 41px;
+    height: 30px;
+  }
+}
+/* line 110, ../../app/styles/pagestyles/footer.scss */
+.footer .icon.icon-email .icon-caption {
+  margin-top: 31px;
+}
+/* line 114, ../../app/styles/pagestyles/footer.scss */
+.footer .icon.icon-email:hover {
+  /* Landscape phones and down */
+}
+/* line 115, ../../app/styles/pagestyles/footer.scss */
+.footer .icon.icon-email:hover .icon-img {
+  background: url(../images/icon-email-sprite.png) 0 15px;
+}
+/* line 118, ../../app/styles/pagestyles/footer.scss */
+.footer .icon.icon-email:hover .icon-caption {
+  color: #2aced9;
+}
+@media only screen and (max-width: 660px) {
+  /* line 114, ../../app/styles/pagestyles/footer.scss */
+  .footer .icon.icon-email:hover {
+    display: none;
+  }
+}
+/* line 127, ../../app/styles/pagestyles/footer.scss */
+.footer .icon.icon-map .icon-img {
+  margin: 0 auto;
+  background: url(../images/icon-map-sprite.png) 0 0;
+  height: 20px;
+  width: 16px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 127, ../../app/styles/pagestyles/footer.scss */
+  .footer .icon.icon-map .icon-img {
+    background-image: url(../images/_mobile/icon-map.png);
+    width: 31px;
+    height: 40px;
+  }
+}
+/* line 138, ../../app/styles/pagestyles/footer.scss */
+.footer .icon.icon-map .icon-caption {
+  margin-top: 26px;
+}
+/* line 140, ../../app/styles/pagestyles/footer.scss */
+.footer .icon.icon-map .icon-caption.icon-caption-two {
+  margin-top: 4px;
+}
+/* line 146, ../../app/styles/pagestyles/footer.scss */
+.footer .icon.icon-map:hover {
+  /* Landscape phones and down */
+}
+/* line 147, ../../app/styles/pagestyles/footer.scss */
+.footer .icon.icon-map:hover .icon-img {
+  background: url(../images/icon-map-sprite.png) 0 20px;
+}
+/* line 150, ../../app/styles/pagestyles/footer.scss */
+.footer .icon.icon-map:hover .icon-caption {
+  color: #2aced9;
+}
+@media only screen and (max-width: 660px) {
+  /* line 146, ../../app/styles/pagestyles/footer.scss */
+  .footer .icon.icon-map:hover {
+    display: none;
+  }
+}
+/* line 159, ../../app/styles/pagestyles/footer.scss */
+.footer .icon .icon-caption {
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-family: 'UniversLTW01-47LightCn';
+  color: #aaa;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 159, ../../app/styles/pagestyles/footer.scss */
+  .footer .icon .icon-caption {
+    color: #2aced9;
+    font-size: 28px;
+  }
+}
+@media only screen and (max-width: 660px) {
+  /* line 59, ../../app/styles/pagestyles/footer.scss */
+  .footer .icon {
+    display: block;
+    width: 100%;
+    margin: 120px 0 0 0;
+  }
+}
+/* line 180, ../../app/styles/pagestyles/footer.scss */
+.footer .copyright {
+  text-align: center;
+  margin-top: 80px;
+  color: white;
+  font-size: 11px;
+  letter-spacing: 3px;
+  /* Landscape phones and down */
+}
+@media only screen and (max-width: 660px) {
+  /* line 180, ../../app/styles/pagestyles/footer.scss */
+  .footer .copyright {
+    font-size: 20px;
+    width: 280px;
+    margin: 115px auto 0 auto;
+  }
+}
+
+
+
+
+
+.worksblock { height:auto; background: white; }
+
+.worksblock .worksgallery {
+  width:100%;
+  display:block;
+}
+
+.worksblock .worksgallery .single-work {
+  float:left;
+  width:33.3%;
+  height:100%;
+  position:relative;
+  margin-top:-4px;  
+}
+
+.worksblock .worksgallery .single-work a:hover .overlay h2 { display:block; }
+.worksblock .worksgallery .single-work a:hover .overlay h3 { display:block; }
+.worksblock .worksgallery .single-work a:hover .overlay p { display:block; }
+
+.worksblock .worksgallery .single-work a:hover img {
+  opacity:1;
+}
+
+
+.worksblock .worksgallery .single-work .overlay {
+  display:none;
+  position:absolute;
+  width:100%;
+  height:100%;
+  display:table;
+  top:35%;
+  text-align:center;
+  vertical-align:middle;
+
+}
+
+.worksblock .worksgallery .single-work .overlay h2 {
+  color:#fff;
+  font-weight:bold;
+  text-transform: uppercase;
+  font-size:28px;
+  line-height:1.2em;
+  padding:0 20px;
+  display:none;
+}
+
+.worksblock .worksgallery .single-work .overlay h3 {
+  color:#fff;
+  font-weight:bold;
+  text-transform: uppercase;
+  display:none;
+}
+
+.worksblock .worksgallery .single-work .overlay p {
+  color:#fff;
+  font-weight:bold;
+  text-transform: uppercase;
+  display:none;
+}
+
+.worksblock .worksgallery img {
+  width:100%;
+  height:340px;
+}
+
+
+.central-text-area{
+  width:100%;
+  height:500px;
+  padding:125px 5px;
+  position: absolute;
+  margin: 0 auto;
+}
+
+
+
+@media (min-width: 890px) and (max-width: 1040px) { .worksblock .worksgallery .single-work {width:33.3%;height:auto;}}
+@media (min-width: 680px) and (max-width: 890px) {.worksblock .worksgallery .single-work {width:50%; height:auto;}}
+@media (min-width: 480px) and (max-width: 680px) {.worksblock .worksgallery .single-work {width:50%; height:auto;}}
+@media (max-width: 480px) { .worksblock .worksgallery .single-work {width:100%; height:auto;}}
+
+
+
+@font-face {
+    font-family: 'archivo_blackregular';
+    src: url('fonts/archivoblack-regular-webfont.eot');
+    src: url('fonts/archivoblack-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/archivoblack-regular-webfont.woff') format('woff'),
+         url('fonts/archivoblack-regular-webfont.ttf') format('truetype'),
+         url('fonts/archivoblack-regular-webfont.svg#archivo_blackregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+
+*{
+   padding:0;
+   margin:0;
+}
+
+/* Background */
+
+body {
+   background-color: #fff;
+}
+
+/* head */
+
+
+header{
+   width:100%;
+   height: 140px;
+   background-color: #F8F8F8;
+}
+
+header a {
+   text-decoration: none;
+   color:grey;
+
+}
+
+header a:hover {
+   color:#c0392b;
+   -webkit-transition: 1s;
+   -moz-transition: 1s;
+   -ms-transition: 1s;
+   -o-transition: 1s;
+   transition: 1s;
+
+}
+
+header p {
+   font-size: 10px;
+   font-family: 'Montserrat', sans-serif;
+   text-transform: uppercase;
+   text-align: center;
+   color:grey;
+   margin-top: 4px;
+
+}
+
+
+
+/* Buttons Row n°1 */
+
+#buttons{
+   text-align: center;
+   margin-top: 100px;
+}
+
+
+
+.btn2{
+   
+   width: 250px;
+   height: 50px;
+   border:1px solid #c0392b;
+   background-color:#e74c3c;
+   color:white;
+   margin:0 auto;
+   outline: none;
+   display: block;
+
+   -webkit-transition: 0.7s;
+   -moz-transition: 0.7s;
+   -ms-transition: 0.7s;
+   -o-transition: 0.7s;
+   transition: 0.7s;
+}
+
+.btn2:hover{
+      background-color: #c0392b;
+      border:none;
+      color:white;
+      -webkit-transition: 1s;
+      -moz-transition: 1s;
+      -ms-transition: 1s;
+      -o-transition: 1s;
+      transition: 1s;
+      -webkit-transform: translateY(10%);
+      -moz-transform: translateY(10%);
+      -ms-transform: translateY(10%);
+      transform: translateY(10%);
+}
+
+
+
+        #top, #bottom, #left, #right {
+        background: #f1f1f1;
+        position: fixed;
+        z-index: 5000;
+        }
+
+        #left, #right {
+        width: 15px; 
+        top: 0; bottom: 0;
+        }
+
+        #left { left: 0; }
+        #right { right: 0; }
+
+        #top, #bottom {
+        height: 15px;  
+        left: 0; right: 0;
+        }
+
+        #top { top: 0; }
+        #bottom { bottom: 0; }
+
+
+
